@@ -1,4 +1,4 @@
-package com.APIRestAssuredPrograms;
+package com.APIRestAssuredPrograms.Ex_01_RA_Hello_World;
 
 import io.restassured.RestAssured;
 
