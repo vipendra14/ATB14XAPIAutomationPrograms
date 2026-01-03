@@ -24,5 +24,7 @@ public class APITesting_05_MultipleTestcase {
                 .then().log().all().statusCode(200);
 
 
+
+
     }
 }

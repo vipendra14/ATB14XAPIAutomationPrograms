@@ -37,5 +37,6 @@ public class APITesting_06_TestCases {
                 .then().log().all().statusCode(200);
 
 
+
     }
 }
