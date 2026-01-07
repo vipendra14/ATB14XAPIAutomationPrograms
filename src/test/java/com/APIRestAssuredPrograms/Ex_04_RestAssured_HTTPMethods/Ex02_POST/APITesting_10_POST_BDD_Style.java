@@ -2,9 +2,11 @@ package com.APIRestAssuredPrograms.Ex_04_RestAssured_HTTPMethods.Ex02_POST;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.testng.annotations.Test;
 
 public class APITesting_10_POST_BDD_Style {
 
+    @Test
     public void post_AuthToken(){
 
         String payload = "{\n" +

@@ -1,4 +1,4 @@
-package com.APIRestAssuredPrograms.Ex_04_RestAssured_HTTPMethods.Ex02_POST;
+package com.APIRestAssuredPrograms.Ex_04_RestAssured_HTTPMethods.Ex04_PATCH;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -7,37 +7,37 @@ import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.Test;
 
-public class APITesting_11_POST_NonBDD_Style {
+public class APITesting_13_PATCH_NONBDD_Style {
 
     RequestSpecification r;
     Response response;
     ValidatableResponse vr;
 
     @Test
-    public void test_AuthToken(){
+    public void patch_Nonbdd(){
 
+        String token = "59d091a0aaeb39c";
+        String bookingid = "4216";
 
         String payload = "{\n" +
-                "    \"username\" : \"admin\",\n" +
-                "    \"password\" : \"password123\"\n" +
+                "    \"firstname\" : \"Vipen\",\n" +
+                "    \"lastname\" : \"Brown\"\n" +
                 "}";
-
-        System.out.println("---- Part1 -----");
 
         r = RestAssured.given();
         r.baseUri("https://restful-booker.herokuapp.com");
-        r.basePath("/auth");
+        r.basePath("/booking/"+bookingid);
+
         r.contentType(ContentType.JSON);
+        r.cookie("token", token);
         r.body(payload).log().all();
 
+        response = r.when().log().all().patch();
 
-        System.out.println("----- Part2 ----");
-
-        response = r.when().log().all().post();
-
-        System.out.println("---- Part3 ---");
-        vr = response.then().log().all();
+        vr= response.then().log().all();
         vr.statusCode(200);
+
+
 
 
     }
