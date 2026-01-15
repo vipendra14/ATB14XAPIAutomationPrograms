@@ -5,19 +5,19 @@ import org.testng.annotations.Test;
 
 public class APITesting_18_Groups {
 
-    @Test(groups = {"Sanity", "Reg"})
+    @Test(groups = {"sanity", "reg"})
     public void sanity_run(){
-        System.out.println("Sanity");
+        System.out.println("sanity");
 
     }
 
-    @Test(groups={"Reg"})
+    @Test(groups={"reg"})
     public void reg_run(){
-        System.out.println("Reg");
+        System.out.println("reg");
 
     }
-    @Test(groups={"Reg","smoke"})
+    @Test(groups={"smoke"})
     public void smoke_run(){
-        System.out.println("Smoke");
+        System.out.println("Smoke " + " reg");
     }
 }
