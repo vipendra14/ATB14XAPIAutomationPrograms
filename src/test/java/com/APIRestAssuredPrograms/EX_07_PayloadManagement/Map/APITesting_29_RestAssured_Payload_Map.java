@@ -19,7 +19,7 @@ public class APITesting_29_RestAssured_Payload_Map {
     String token;
     Integer booking;
 
-    @BeforeClass
+   /* @BeforeClass
     public void generate_token(){
         Map<String, Object> jasontokenusingMap = new LinkedHashMap<>();
         jasontokenusingMap.put("username","admin");
@@ -38,7 +38,7 @@ public class APITesting_29_RestAssured_Payload_Map {
         token = response.jsonPath().getString("token");
         System.out.println("Token Generated  " +  token);
 
-    }
+    }*/
 
     @Test
     public void test_POST(){
